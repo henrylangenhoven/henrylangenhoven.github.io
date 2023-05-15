@@ -40,13 +40,20 @@
 
     <script>
       function calculateAge() {
-        const currentYear = new Date().getFullYear();
-
-        const birthYearEncoded = btoa("×ßv");
-        const birthYear = parseInt(birthYearEncoded);
+        const currentDate = new Date();
+        const birthDate = new Date(atob("MTk5Mi0xMC0wMg=="));
 
         // Calculate the age
-        const age = currentYear - birthYear;
+        let age = currentDate.getFullYear() - birthDate.getFullYear();
+
+        // Check if the current date is before the birthdate this year
+        if (
+          currentDate.getMonth() < birthDate.getMonth() ||
+          (currentDate.getMonth() === birthDate.getMonth() &&
+            currentDate.getDate() < birthDate.getDate())
+        ) {
+          age--;
+        }
 
         // Display the age in the output element
         const outputElement = document.getElementById("myAge");
@@ -218,7 +225,7 @@
                   <ul>
                     <li>
                       <i class="bi bi-chevron-right"></i> <strong>Age:</strong>
-                      <span id="myAge">30</span>
+                      <span id="myAge">x</span>
                     </li>
                     <li>
                       <i class="bi bi-chevron-right"></i>
