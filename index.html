@@ -39,9 +39,10 @@
     <link href="assets/css/style.css" rel="stylesheet" />
 
     <script>
-      function calculateAge() {
+      function calculateDates() {
         const currentDate = new Date();
         const birthDate = new Date(atob("MTk5Mi0xMC0wMg=="));
+        const startedWorkingDate = new Date(atob("MjAxNS0wMS0xMg=="));
 
         // Calculate the age
         let age = currentDate.getFullYear() - birthDate.getFullYear();
@@ -56,12 +57,31 @@
         }
 
         // Display the age in the output element
-        const outputElement = document.getElementById("myAge");
-        outputElement.textContent = age.toString();
+        const ageOutputElement = document.getElementById("myAge");
+        ageOutputElement.textContent = age.toString();
+
+        // Calculate the years of experience
+        let yearsOfExperience =
+          currentDate.getFullYear() - startedWorkingDate.getFullYear();
+
+        // Check if the current date is before the started working date this year
+        if (
+          currentDate.getMonth() < startedWorkingDate.getMonth() ||
+          (currentDate.getMonth() === startedWorkingDate.getMonth() &&
+            currentDate.getDate() < startedWorkingDate.getDate())
+        ) {
+          yearsOfExperience--;
+        }
+
+        // Display the years of experience in the output element
+        const yearsOfExperienceOutputElement =
+          document.getElementById("yearsOfExperience");
+        yearsOfExperienceOutputElement.textContent =
+          yearsOfExperience.toString();
       }
 
-      // Run the calculateAge function when the page loads
-      window.onload = calculateAge;
+      // Run the calculateDates function when the page loads
+      window.onload = calculateDates;
     </script>
 
     <!-- =======================================================
@@ -175,23 +195,14 @@
           <div class="section-title">
             <h2>About</h2>
             <p>
-              As a Senior Software Engineer with over 8 years of total
-              experience, I bring a wealth of experience in building full-stack
-              solutions and leading both new and existing projects. My expertise
-              lies in backend development with Java and Spring Framework, as
-              well as frontend development with Angular. I prefer to work with
-              modern containerized microservice environments, and strive to
-              modernize existing systems to adopt containerization.
-              <br /><br />
-              I am an energetic team player and effective communicator,
-              proficient in leading Agile Scrum teams. I am passionate about
-              taking on challenges that can have a positive impact on the world
-              and strive to deliver excellent quality, maintainable solutions
-              that meet requirements and deadlines.
-              <br /><br />
-              Overall, my experience and skills make me a valuable asset to any
-              team looking for a results-driven and passionate Senior Software
-              Engineer.
+              As a Senior Software Engineer with over
+              <span id="yearsOfExperience">...</span> years of total experience,
+              I bring a wealth of experience in building full-stack solutions
+              and leading both new and existing projects. My expertise lies in
+              backend development with Java and Spring Framework, as well as
+              frontend development with Angular. I prefer to work with modern
+              containerized microservice environments, and strive to modernize
+              existing systems to adopt containerization.
             </p>
           </div>
 
@@ -205,11 +216,6 @@
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
               <h3>Senior Software Engineer &amp; Full Stack Developer.</h3>
-              <p class="fst-italic">
-                <!--                TODO: add some text here -->
-                <!--                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do-->
-                <!--                eiusmod tempor incididunt ut labore et dolore magna aliqua.-->
-              </p>
               <div class="row">
                 <div class="col-lg-5">
                   <ul>
@@ -224,7 +230,7 @@
                     </li>
                     <li>
                       <i class="bi bi-chevron-right"></i> <strong>Age:</strong>
-                      <span id="myAge">x</span>
+                      <span id="myAge">...</span>
                     </li>
                   </ul>
                 </div>
@@ -247,13 +253,15 @@
                 </div>
               </div>
               <p>
-                Officiis eligendi itaque labore et dolorum mollitia officiis
-                optio vero. Quisquam sunt adipisci omnis et ut. Nulla
-                accusantium dolor incidunt officia tempore. Et eius omnis.
-                Cupiditate ut dicta maxime officiis quidem quia. Sed et
-                consectetur qui quia repellendus itaque neque. Aliquid amet
-                quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis
-                culpa magni laudantium dolores.
+                I am an energetic team player and effective communicator,
+                proficient in leading Agile Scrum teams. I am passionate about
+                taking on challenges that can have a positive impact on the
+                world and strive to deliver excellent quality, maintainable
+                solutions that meet requirements and deadlines.
+                <br />
+                Overall, my experience and skills make me a valuable asset to
+                any team looking for a results-driven and passionate Senior
+                Software Engineer.
               </p>
             </div>
           </div>
@@ -458,38 +466,27 @@
           <div class="section-title">
             <h2>Resume</h2>
             <p>
-              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
-              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
-              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-              Quia fugiat sit in iste officiis commodi quidem hic quas.
+              <!--              TODO-->
+              <!--              Magnam dolores commodi suscipit. Necessitatibus eius consequatur-->
+              <!--              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam-->
+              <!--              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.-->
+              <!--              Quia fugiat sit in iste officiis commodi quidem hic quas.-->
             </p>
           </div>
 
           <div class="row">
             <div class="col-lg-6" data-aos="fade-up">
-              <h3 class="resume-title">Sumary</h3>
-              <div class="resume-item pb-0">
-                <h4>Henry Langenhoven</h4>
-                <p>
-                  <em
-                    >Innovative and deadline-driven Graphic Designer with 3+
-                    years of experience designing and developing user-centered
-                    digital/print marketing material from initial concept to
-                    final, polished deliverable.</em
-                  >
-                </p>
-                <ul>
-                  <li>Portland par 127,Orlando, FL</li>
-                  <li>(123) 456-7891</li>
-                  <li>alice.barkley@example.com</li>
-                </ul>
-              </div>
-
               <h3 class="resume-title">Education</h3>
               <div class="resume-item">
-                <h4>Master of Fine Arts &amp; Graphic Design</h4>
-                <h5>2015 - 2016</h5>
-                <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+                <h4>Bachelor Degree of Computing</h4>
+                <h5>2012 - 2016</h5>
+                <p>
+                  <em> Belgium Campus iTversity </em>
+                  <br />
+                  <em>
+                    138 Berg Ave, Heatherdale AH, Akasia, 0182, South Africa
+                  </em>
+                </p>
                 <p>
                   Qui deserunt veniam. Et sed aliquam labore tempore sed
                   quisquam iusto autem sit. Ea vero voluptatum qui ut
@@ -497,14 +494,20 @@
                 </p>
               </div>
               <div class="resume-item">
-                <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                <h5>2010 - 2014</h5>
-                <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+                <h4>National Senior Certificate</h4>
+                <h5>2009 - 2011</h5>
                 <p>
-                  Quia nobis sequi est occaecati aut. Repudiandae et iusto quae
-                  reiciendis et quis Eius vel ratione eius unde vitae rerum
-                  voluptates asperiores voluptatem Earum molestiae consequatur
-                  neque etlon sader mart dila
+                  <em>Die Hoërskool Wonderboom</em>
+                  <br />
+                  <em>
+                    1050 Steve Biko Rd, Wonderboom, Pretoria, 0084, South Africa
+                  </em>
+                </p>
+                <p>
+                  The National Senior Certificate or NSC is a high school
+                  diploma and is the school-leaving certificate in South Africa.
+                  This certificate is commonly known as the matriculation
+                  (matric) certificate, as grade 12 is the matriculation grade.
                 </p>
               </div>
             </div>
@@ -514,26 +517,28 @@
                 <h3>Senior Software Engineer</h3>
                 <h4>Capgemini · Full-time</h4>
                 <h5>Mar 2021 - Present</h5>
-                <p><em>Utrecht, Netherlands · Hybrid </em></p>
-                <p>
-                  I relocated to the Netherlands to pursue an international
-                  software career, joining Capgemini as a Senior Software
-                  Engineer. This was a major achievement for me both personally
-                  and professionally. With the onset of Covid, I began working
-                  remotely, and as this became the new norm in the Netherlands,
-                  I continued to work in a hybrid and remote capacity. During
-                  this time, I also achieved proficiency in speaking Dutch.
-                  <br /><br />
-                  At Capgemini, I was assigned to UWV, the Dutch government's
-                  Employee Insurance Agency, where I was one of the initial
-                  developers on a project to modernize an existing system.
-                  Please see the UWV section for further details.
-                  <br /><br />
-
-                  In this role, I had the opportunity to enhance my leadership
-                  skills, gain expertise in remote work, and assume managerial
-                  responsibilities as a counselor.
-                </p>
+                <p><em>Utrecht, Netherlands · Hybrid</em></p>
+                <p></p>
+                <ul>
+                  <li>
+                    Relocated to the Netherlands for an international software
+                    career at Capgemini as a Senior Software Engineer.
+                  </li>
+                  <li>
+                    Adapted to remote work during the Covid pandemic, continuing
+                    in a hybrid and remote capacity.
+                  </li>
+                  <li>
+                    Achieved proficiency in speaking Dutch while working
+                    remotely.
+                  </li>
+                  <li>
+                    Assigned to UWV, the Dutch government's Employee Insurance
+                    Agency, as an initial developer on a system modernization
+                    project, gaining leadership skills and assuming managerial
+                    responsibilities.
+                  </li>
+                </ul>
               </div>
               <div class="resume-item">
                 <h4>Graphic design specialist</h4>
@@ -1046,7 +1051,15 @@
         <div class="container">
           <div class="section-title">
             <h2>Contact</h2>
-            <p>Simplest way to contact me is via LinkedIn.</p>
+            <p>
+              Feel free to contact me via
+              <a
+                href="https://www.linkedin.com/in/henry-langenhoven/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              for a detailed and up-to-date profile of my career.
+            </p>
           </div>
           <div class="row" data-aos="fade-in">
             <div class="col-lg-8 d-flex align-items-stretch">
