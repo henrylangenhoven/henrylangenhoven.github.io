@@ -17,7 +17,21 @@ import { TestimonialsComponent } from './main/testimonials/testimonials.componen
 import { ContactComponent } from './main/contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, HeroComponent, HeaderComponent, FooterComponent, MainComponent, AboutComponent, FactsComponent, SkillsComponent, ResumeComponent, PortfolioComponent, ServicesComponent, TestimonialsComponent, ContactComponent],
+  declarations: [
+    AppComponent,
+    HeroComponent,
+    HeaderComponent,
+    FooterComponent,
+    MainComponent,
+    AboutComponent,
+    FactsComponent,
+    SkillsComponent,
+    ResumeComponent,
+    PortfolioComponent,
+    ServicesComponent,
+    TestimonialsComponent,
+    ContactComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
