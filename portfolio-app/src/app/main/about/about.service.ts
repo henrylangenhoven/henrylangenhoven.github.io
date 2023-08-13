@@ -31,7 +31,9 @@ export class AboutService {
       employment: 'Permanent',
       workplace: 'Hybrid',
       topParagraph:
-        'As a Senior Software Engineer with over 8 years of total experience, I bring a wealth of experience in building full-stack solutions and leading both new and existing projects. My expertise lies in backend development with Java and Spring Framework, as well as frontend development with Angular. I prefer to work with modern containerized microservice environments, and strive to modernize existing systems to adopt containerization.',
+        'As a Senior Software Engineer with over ' +
+        this.calculateYearsOfExperience('2015-01-12') +
+        ' years of total experience, I bring a wealth of experience in building full-stack solutions and leading both new and existing projects. My expertise lies in backend development with Java and Spring Framework, as well as frontend development with Angular. I prefer to work with modern containerized microservice environments, and strive to modernize existing systems to adopt containerization.',
       bottomParagraph:
         'I am an energetic team player and effective communicator, proficient in leading Agile Scrum teams. I am\n' +
         '          passionate about taking on challenges that can have a positive impact on the world and strive to deliver\n' +
@@ -43,10 +45,31 @@ export class AboutService {
     };
   }
 
-  calculateAge(birthdate: string): number {
-    const birthday = new Date(birthdate);
-    const ageDifMs = Date.now() - birthday.getTime();
-    const ageDate = new Date(ageDifMs);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  calculateAge(birthday: string): number {
+    return this.calculateYearsSince(birthday);
+  }
+
+  calculateYearsOfExperience(startedWorkingDay: string): number {
+    return this.calculateYearsSince(startedWorkingDay);
+  }
+
+  private calculateYearsSince(dateString: string): number {
+    const currentDate = new Date();
+    const otherDate = new Date(dateString);
+
+    if (isNaN(otherDate.getTime())) {
+      throw new Error('Invalid date format');
+    }
+
+    let result = currentDate.getFullYear() - otherDate.getFullYear();
+
+    if (
+      currentDate.getMonth() < otherDate.getMonth() ||
+      (currentDate.getMonth() === otherDate.getMonth() && currentDate.getDate() < otherDate.getDate())
+    ) {
+      result--;
+    }
+
+    return result;
   }
 }
