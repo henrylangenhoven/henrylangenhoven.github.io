@@ -28,56 +28,13 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
 
-    <script>
-      <!--    TODO: angularize this function -->
-      function calculateDates() {
-        const currentDate = new Date();
-        const birthDate = new Date(atob('MTk5Mi0xMC0wMg=='));
-        const startedWorkingDate = new Date(atob('MjAxNS0wMS0xMg=='));
-
-        // Calculate the age
-        let age = currentDate.getFullYear() - birthDate.getFullYear();
-
-        // Check if the current date is before the birthdate this year
-        if (
-          currentDate.getMonth() < birthDate.getMonth() ||
-          (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())
-        ) {
-          age--;
-        }
-
-        // Display the age in the output element
-        const ageOutputElement = document.getElementById('myAge');
-        ageOutputElement.textContent = age.toString();
-
-        // Calculate the years of experience
-        let yearsOfExperience = currentDate.getFullYear() - startedWorkingDate.getFullYear();
-
-        // Check if the current date is before the started working date this year
-        if (
-          currentDate.getMonth() < startedWorkingDate.getMonth() ||
-          (currentDate.getMonth() === startedWorkingDate.getMonth() &&
-            currentDate.getDate() < startedWorkingDate.getDate())
-        ) {
-          yearsOfExperience--;
-        }
-
-        // Display the years of experience in the output element
-        const yearsOfExperienceOutputElement = document.getElementById('yearsOfExperience');
-        yearsOfExperienceOutputElement.textContent = yearsOfExperience.toString();
-      }
-
-      // Run the calculateDates function when the page loads
-      window.onload = calculateDates;
-    </script>
-
     <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+* Template Name: iPortfolio
+* Updated: Mar 10 2023 with Bootstrap v5.2.3
+* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+======================================================== -->
   </head>
   <body>
     <app-root></app-root>
