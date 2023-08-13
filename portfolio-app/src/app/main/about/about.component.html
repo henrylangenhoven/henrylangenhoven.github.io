@@ -4,35 +4,31 @@
     <div class="section-title">
       <h2>About</h2>
       <p>
-        As a Senior Software Engineer with over
-        <span id="yearsOfExperience">...</span> years of total experience, I bring a wealth of experience in building
-        full-stack solutions and leading both new and existing projects. My expertise lies in backend development with
-        Java and Spring Framework, as well as frontend development with Angular. I prefer to work with modern
-        containerized microservice environments, and strive to modernize existing systems to adopt containerization.
+        {{ about.topParagraph }}
       </p>
     </div>
 
     <div class="row">
       <div class="col-lg-4" data-aos="fade-right">
-        <img src="assets/img/Henry Team Rockstars Profile Pic 2023.jpg" class="img-fluid" alt="" />
+        <img [src]="about.profileImageUrl" class="img-fluid" alt="" />
       </div>
       <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-        <h3>Senior Software Engineer &amp; Full Stack Developer.</h3>
+        <h3>{{ about.role }}</h3>
         <div class="row">
           <div class="col-lg-5">
             <ul>
               <li>
                 <i class="bi bi-chevron-right"></i>
                 <strong>City:</strong>
-                <span>Utrecht, The Netherlands</span>
+                <span>{{ about.city }}</span>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i>
-                <strong>From:</strong> <span>Pretoria, South Africa</span>
+                <strong>From:</strong> <span>{{ about.from }}</span>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i> <strong>Age:</strong>
-                <span id="myAge">...</span>
+                <span id="myAge">{{ about.age }}</span>
               </li>
             </ul>
           </div>
@@ -41,26 +37,21 @@
               <li>
                 <i class="bi bi-chevron-right"></i>
                 <strong>Degree:</strong>
-                <span>Bachelor Degree of Computing</span>
+                <span>{{ about.degree }}</span>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i>
-                <strong>Employment:</strong> <span>Permanent</span>
+                <strong>Employment:</strong> <span>{{ about.employment }}</span>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i>
-                <strong>Workplace:</strong> <span>Hybrid</span>
+                <strong>Workplace:</strong> <span>{{ about.workplace }}</span>
               </li>
             </ul>
           </div>
         </div>
         <p>
-          I am an energetic team player and effective communicator, proficient in leading Agile Scrum teams. I am
-          passionate about taking on challenges that can have a positive impact on the world and strive to deliver
-          excellent quality, maintainable solutions that meet requirements and deadlines.
-          <br />
-          Overall, my experience and skills make me a valuable asset to any team looking for a results-driven and
-          passionate Senior Software Engineer.
+          {{ about.bottomParagraph }}
         </p>
       </div>
     </div>
