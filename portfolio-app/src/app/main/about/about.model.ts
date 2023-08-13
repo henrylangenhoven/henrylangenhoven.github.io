@@ -3,7 +3,8 @@ export interface About {
   role: string;
   city: string;
   from: string;
-  age: number;
+  birthDate: string;
+  startedWorkDate: string;
   degree: string;
   employment: string;
   workplace: string;
