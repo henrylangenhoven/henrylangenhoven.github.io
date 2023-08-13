@@ -4,31 +4,31 @@
     <div class="section-title">
       <h2>About</h2>
       <p>
-        {{ about.topParagraph }}
+        {{ (about | async)?.topParagraph }}
       </p>
     </div>
 
     <div class="row">
       <div class="col-lg-4" data-aos="fade-right">
-        <img [src]="about.profileImageUrl" class="img-fluid" alt="" />
+        <img [src]="(about | async)?.profileImageUrl" class="img-fluid" alt="" />
       </div>
       <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-        <h3>{{ about.role }}</h3>
+        <h3>{{ (about | async)?.role }}</h3>
         <div class="row">
           <div class="col-lg-5">
             <ul>
               <li>
                 <i class="bi bi-chevron-right"></i>
                 <strong>City:</strong>
-                <span>{{ about.city }}</span>
+                <span>{{ (about | async)?.city }}</span>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i>
-                <strong>From:</strong> <span>{{ about.from }}</span>
+                <strong>From:</strong> <span>{{ (about | async)?.from }}</span>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i> <strong>Age:</strong>
-                <span id="myAge">{{ about.age }}</span>
+                <span id="myAge">{{ (about | async)?.age }}</span>
               </li>
             </ul>
           </div>
@@ -37,21 +37,21 @@
               <li>
                 <i class="bi bi-chevron-right"></i>
                 <strong>Degree:</strong>
-                <span>{{ about.degree }}</span>
+                <span>{{ (about | async)?.degree }}</span>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i>
-                <strong>Employment:</strong> <span>{{ about.employment }}</span>
+                <strong>Employment:</strong> <span>{{ (about | async)?.employment }}</span>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i>
-                <strong>Workplace:</strong> <span>{{ about.workplace }}</span>
+                <strong>Workplace:</strong> <span>{{ (about | async)?.workplace }}</span>
               </li>
             </ul>
           </div>
         </div>
         <p>
-          {{ about.bottomParagraph }}
+          {{ (about | async)?.bottomParagraph }}
         </p>
       </div>
     </div>

@@ -1,13 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 
 import { AboutService } from './about.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AboutService', () => {
   let service: AboutService;
   const mockedCurrentDate = '2023-08-13';
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({ imports: [HttpClientTestingModule] });
     service = TestBed.inject(AboutService);
 
     jasmine.clock().install();

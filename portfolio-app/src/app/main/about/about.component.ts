@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AboutService } from './about.service';
+import { Observable } from 'rxjs';
+import { About } from './about.model';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +9,7 @@ import { AboutService } from './about.service';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent {
-  about = this.aboutService.getAbout();
+  about: Observable<About> = this.aboutService.getAbout();
 
   constructor(private aboutService: AboutService) {}
 }
