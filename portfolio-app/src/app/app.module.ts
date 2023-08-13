@@ -7,32 +7,29 @@ import { HeroComponent } from './hero/hero.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
-import { FactsComponent } from './main/facts/facts.component';
-import { SkillsComponent } from './main/skills/skills.component';
-import { ResumeComponent } from './main/resume/resume.component';
-import { PortfolioComponent } from './main/portfolio/portfolio.component';
-import { ServicesComponent } from './main/services/services.component';
-import { TestimonialsComponent } from './main/testimonials/testimonials.component';
-import { ContactComponent } from './main/contact/contact.component';
 import { AboutModule } from './main/about/about.module';
+import { ResumeModule } from './main/resume/resume.module';
+import { ServicesModule } from './main/services/services.module';
+import { ContactModule } from './main/contact/contact.module';
+import { PortfolioModule } from './main/portfolio/portfolio.module';
+import { FactsModule } from './main/facts/facts.module';
+import { TestimonialsModule } from './main/testimonials/testimonials.module';
+import { SkillsModule } from './main/skills/skills.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroComponent,
-    HeaderComponent,
-    FooterComponent,
-    MainComponent,
-
-    FactsComponent,
-    SkillsComponent,
-    ResumeComponent,
-    PortfolioComponent,
-    ServicesComponent,
-    TestimonialsComponent,
-    ContactComponent,
+  declarations: [AppComponent, HeroComponent, HeaderComponent, FooterComponent, MainComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AboutModule,
+    ResumeModule,
+    ServicesModule,
+    ContactModule,
+    PortfolioModule,
+    FactsModule,
+    TestimonialsModule,
+    SkillsModule,
   ],
-  imports: [BrowserModule, AppRoutingModule, AboutModule],
   providers: [],
   bootstrap: [AppComponent],
 })
