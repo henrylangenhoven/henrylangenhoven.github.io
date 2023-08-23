@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HeroComponent } from './hero.component';
 
 describe('HeroComponent', () => {
@@ -17,5 +16,11 @@ describe('HeroComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return correct data items', () => {
+    const dataItems = component.getDataItems();
+
+    expect(dataItems.length).toBeGreaterThan(0);
   });
 });
