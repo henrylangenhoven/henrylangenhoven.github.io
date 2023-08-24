@@ -5,7 +5,7 @@ name: CI, Build and Test
 
 on:
   pull_request:
-    branches: [ 'main', '!deploy' ]
+    branches: ['main', '!deploy']
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-version: [18.x]
 
     steps:
       - name: Checkout code
