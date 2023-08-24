@@ -5,7 +5,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ 'main' , 'deploy' ]
+    branches: ['main', 'deploy']
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-version: [18.x]
 
     steps:
       - name: Checkout code
@@ -53,4 +53,3 @@ jobs:
       - name: Detect changes
         if: steps.auto-commit-action.outputs.changes_detected == 'false'
         run: echo "No changes made by applying formatting..."
-
