@@ -36,10 +36,7 @@ jobs:
           git commit -am "Commit changes made by applying formatting" || echo "No changes to commit"
 
       - name: Push formatting changes
-        uses: devops-infra/action-commit-push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          commit_message: Commit changes made by applying formatting
+        uses: stefanzweifel/git-auto-commit-action@v4
 
       - name: Build
         run: npm run build --if-present
