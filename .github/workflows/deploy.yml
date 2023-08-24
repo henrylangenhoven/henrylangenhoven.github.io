@@ -37,6 +37,7 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
+          git add .
           if [[ -n "$(git diff --exit-code)" ]]; then
             echo "::set-output name=changes::true"
           else
