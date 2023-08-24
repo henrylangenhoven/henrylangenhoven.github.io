@@ -44,4 +44,5 @@ Thumbs.db
 
 # My ignores
 /src/assets
+/archive
 *.ico
