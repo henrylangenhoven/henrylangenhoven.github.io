@@ -26,12 +26,6 @@ jobs:
       - name: Continuous Integration
         run: npm ci
 
-      - name: Build
-        run: npm run build --if-present
-
-      - name: Test
-        run: npm run test-headless
-
       - name: Apply formatting
         run: npm run format:prettier
 
@@ -46,3 +40,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: Commit changes made by applying formatting
+
+      - name: Build
+        run: npm run build --if-present
+
+      - name: Test
+        run: npm run test-headless
