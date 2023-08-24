@@ -35,13 +35,14 @@ jobs:
       - name: Apply formatting
         run: npm run format:prettier
 
-      - name: Commit changes
+      - name: Commit formatting changes
         run: |
-          git config --local user.email "henrylangenhoven-action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git commit -am "Commit changes made by applying formatting" || echo "No changes to commit"
 
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
+      - name: Push formatting changes
+        uses: ad-m/github-push-action@master
         with:
+          branch: ${{ github.head_ref }}
           github_token: ${{ secrets.GITHUB_TOKEN }} # Uses the automatically generated token
