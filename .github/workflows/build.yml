@@ -1,29 +1,57 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js CI
+name: CI, Build and Test
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        node-version: [18.x]
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Continuous Integration
+        run: npm ci
+
+      - name: Apply formatting
+        run: npm run format:prettier
+
+      - name: Commit formatting changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -am "Commit changes made by applying formatting" || echo "No changes to commit"
+
+      - name: Push formatting changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+
+      - name: 'Detect changes'
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        run: echo "Changes made by applying formatting..."
+
+      - name: 'Detect changes'
+        if: steps.auto-commit-action.outputs.changes_detected == 'false'
+        run: echo "No changes made by applying formatting..."
+
+      - name: Build
+        run: npm run build --if-present
+
+      - name: Test
+        run: npm run test-headless
