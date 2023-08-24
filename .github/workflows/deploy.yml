@@ -5,7 +5,7 @@ name: Deploy
 
 on:
   push:
-    branches: ['main', 'deploy']
+    branches: [ 'main', 'deploy' ]
 
 jobs:
   deploy:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [ 18.x ]
 
     steps:
       - name: Checkout code
@@ -33,6 +33,16 @@ jobs:
 
       - name: Build
         run: npm run build --if-present
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git add .
+          if [[ -n "$(git diff --exit-code)" ]]; then
+            echo "::set-output name=changes::true"
+          else
+            echo "::set-output name=changes::false"
+          fi
 
       - name: Commit changes
         run: |
