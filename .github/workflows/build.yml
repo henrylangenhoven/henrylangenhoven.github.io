@@ -5,7 +5,7 @@ name: CI, Build and Test
 
 on:
   pull_request:
-    branches: ['main']
+    branches: [ 'main' ]
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [ 18.x ]
 
     steps:
       - uses: actions/checkout@v3
@@ -42,7 +42,7 @@ jobs:
           git commit -am "Commit changes made by applying formatting" || echo "No changes to commit"
 
       - name: Push formatting changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: ${{ github.head_ref }}
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Uses the automatically generated token
+        run: |
+          if [ $? -eq 0 ]; then
+            git push origin $GITHUB_REF
+          fi
