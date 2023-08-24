@@ -41,7 +41,7 @@ jobs:
           git commit -am "Commit changes made by applying formatting" || echo "No changes to commit"
 
       - name: Push formatting changes
-        run: |
-          if [ $? -eq 0 ]; then
-            git push origin $GITHUB_REF
-          fi
+        uses: devops-infra/action-commit-push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: Commit changes made by applying formatting
