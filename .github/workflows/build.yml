@@ -39,6 +39,7 @@ jobs:
             echo "::set-output name=changes::false"
           fi
 
+      # TODO: sign commits
       - name: Commit formatting changes
         if: steps.check_changes.outputs.changes == 'true'
         run: |
