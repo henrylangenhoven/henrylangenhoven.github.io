@@ -5,7 +5,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ 'main' ]
+    branches: ['main']
 
 jobs:
   deploy:
@@ -29,7 +29,6 @@ jobs:
 
       - name: Run tests
         run: npm run test:headless
-
 
       - name: Build
         run: npm run build:prod
