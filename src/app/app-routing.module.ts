@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroComponent } from './hero/hero.component';
 
 const routes: Routes = [
-  { path: '', component: HeroComponent },
-  { path: 'henry', component: HeroComponent },
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: 'home', component: HeroComponent },
   { path: 'about', loadChildren: () => import('./main/about/about.module').then(m => m.AboutModule) },
   { path: 'resume', loadChildren: () => import('./main/resume/resume.module').then(m => m.ResumeModule) },
   { path: 'portfolio', loadChildren: () => import('./main/portfolio/portfolio.module').then(m => m.PortfolioModule) },
