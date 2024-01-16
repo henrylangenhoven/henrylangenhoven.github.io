@@ -38,7 +38,6 @@ jobs:
             echo "changes=false >> $GITHUB_OUTPUT"
           fi
 
-      # TODO: sign commits
       - name: Commit formatting changes
         if: steps.check_changes.outputs.changes == 'true'
         uses: planetscale/ghcommit-action@v0.1.31
