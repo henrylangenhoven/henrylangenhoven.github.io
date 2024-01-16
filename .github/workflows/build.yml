@@ -5,7 +5,7 @@ name: CI, Build and Test
 
 on:
   pull_request:
-    branches: ['main']
+    branches: [ 'main' ]
 
 jobs:
   format-code:
@@ -43,11 +43,11 @@ jobs:
         if: steps.check_changes.outputs.changes == 'true'
         uses: planetscale/ghcommit-action@v0.1.31
         with:
-          commit_message: "🤖 apply formatting..."
+          commit_message: '🤖 apply formatting...'
           repo: ${{ github.repository }}
           branch: ${{ github.head_ref || github.ref_name }}
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
 
   build:
     runs-on: ubuntu-latest
