@@ -30,13 +30,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
-        with:
-          path: ~/.npm
-          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
