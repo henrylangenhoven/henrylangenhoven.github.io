@@ -5,7 +5,7 @@ name: CI, Build and Test
 
 on:
   pull_request:
-    branches: ['main']
+    branches: [ 'main' ]
 
 jobs:
   format-code:
@@ -69,14 +69,18 @@ jobs:
 
       - name: Test
         id: run-tests
-        run: npm run test:headless
+        run: |
+          npm run test:headless
+          karma start --reporters junit
+        env:
+          CI: true
 
       - name: Upload test report
         if: failure() && steps.run-tests.outcome == 'failure'
         uses: actions/upload-artifact@v3
         with:
           name: test-report
-          path: test.json
+          path: junit-report.xml
 
       - name: Build
         run: npm run build --if-present
