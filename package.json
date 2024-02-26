@@ -11,7 +11,8 @@
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "format:check": "prettier --config ./.prettierrc --list-different .",
-    "format:prettier": "npx prettier --config ./.prettierrc --write . --check"
+    "format:all": "npx prettier --config ./.prettierrc --write . --check",
+    "format:src": "npx prettier --config ./.prettierrc --write ./src --check"
   },
   "private": true,
   "dependencies": {
