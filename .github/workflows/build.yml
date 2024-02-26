@@ -35,9 +35,9 @@ jobs:
             echo "changes=false >> $GITHUB_OUTPUT"
           fi
 
-      - name: Ensure latest changes
+      - name: Ensure latest changes from current branch
         run: |
-          git pull
+          git pull origin $GITHUB_REF
 
       - name: Commit & Push changes
         if: steps.check_changes.outputs.changes == 'true'
