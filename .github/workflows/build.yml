@@ -45,9 +45,7 @@ jobs:
 
       - name: Commit & Push changes
         if: steps.check_changes.outputs.changes == 'true'
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        uses: stefanzweifel/git-auto-commit-action@v5
 
   build:
     runs-on: ubuntu-latest
