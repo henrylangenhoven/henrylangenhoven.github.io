@@ -5,7 +5,7 @@ name: CI, Build and Test
 
 on:
   pull_request:
-    branches: [ 'main' ]
+    branches: ['main']
 
 jobs:
   #  format-code:
