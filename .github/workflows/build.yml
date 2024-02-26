@@ -46,7 +46,7 @@ jobs:
           repo: ${{ github.repository }}
           branch: ${{ github.head_ref || github.ref_name }}
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   build:
     runs-on: ubuntu-latest
