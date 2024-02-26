@@ -38,15 +38,11 @@ jobs:
             echo "changes=false >> $GITHUB_OUTPUT"
           fi
 
-      - name: Commit formatting changes
+      - name: Commit & Push changes
         if: steps.check_changes.outputs.changes == 'true'
-        uses: planetscale/ghcommit-action@v0.1.33
+        uses: actions-js/push@master
         with:
-          commit_message: '🤖 apply formatting...'
-          repo: ${{ github.repository }}
-          branch: ${{ github.head_ref || github.ref_name }}
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
   build:
     runs-on: ubuntu-latest
