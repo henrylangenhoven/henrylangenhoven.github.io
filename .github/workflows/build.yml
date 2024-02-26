@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Apply formatting
-        run: npm run format:prettier
+        run: npm run format:src
 
       - name: Check for changes
         id: check_changes
