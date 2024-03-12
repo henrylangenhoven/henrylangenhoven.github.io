@@ -3,7 +3,7 @@
   <div class="d-flex flex-column">
     <div class="profile">
       <img src="assets/img/Henry Team Rockstars Profile Pic 2023.jpg" alt="" class="img-fluid rounded-circle" />
-      <h1 class="text-light"><a routerLink="/">Henry Langenhoven</a></h1>
+      <h1 class="text-light"><a href="#" (click)="scrollToTop()">Henry Langenhoven</a></h1>
       <div class="social-links mt-3 text-center">
         <a href="https://github.com/henrylangenhoven" target="_blank" class="bi-github"> </a>
         <a href="https://www.linkedin.com/in/henry-langenhoven/" target="_blank" class="bi-linkedin"> </a>
@@ -15,35 +15,10 @@
 
     <nav id="navbar" class="nav-menu navbar">
       <ul>
-        <li>
-          <a routerLink="/home" [routerLinkActive]="'active'" class="nav-link scrollto">
-            <i class="bx bx-home"></i> <span>Home</span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="/about" [routerLinkActive]="'active'" class="nav-link scrollto">
-            <i class="bx bx-user"></i> <span>About</span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="/resume" [routerLinkActive]="'active'" class="nav-link scrollto">
-            <i class="bx bx-file-blank"></i> <span>Resume</span>
-          </a>
-        </li>
-        <!--            <li>-->
-        <!--            TODO: do portfolio section -->
-        <!--              <a href="#portfolio" class="nav-link scrollto">-->
-        <!--                <i class="bx bx-book-content"></i> <span>Portfolio</span></a-->
-        <!--              >-->
-        <!--            </li>-->
-        <!--            <li>-->
-        <!--              <a href="#skills" class="nav-link scrollto">-->
-        <!--                <i class="bx bx-server"></i> <span>Skills</span></a-->
-        <!--              >-->
-        <!--            </li>-->
-        <li>
-          <a routerLink="/contact" [routerLinkActive]="'active'" class="nav-link scrollto">
-            <i class="bx bx-envelope"></i> <span>Contact</span>
+        <li *ngFor="let link of links">
+          <a href="{{ link.url }}" class="nav-link scrollto" [ngClass]="{ active: isRouterLinkActive(link.url) }">
+            <i class="bx" [ngClass]="link.icon"></i>
+            <span>{{ link.name }}</span>
           </a>
         </li>
       </ul>
