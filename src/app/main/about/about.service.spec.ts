@@ -1,14 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 
 import { AboutService } from './about.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('AboutService', () => {
   let service: AboutService;
   const mockedCurrentDate = '2023-08-13';
 
   beforeEach(() => {
-    TestBed.configureTestingModule({ imports: [HttpClientTestingModule] });
+    TestBed.configureTestingModule({
+      imports: [],
+      providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()],
+    });
     service = TestBed.inject(AboutService);
 
     jasmine.clock().install();
