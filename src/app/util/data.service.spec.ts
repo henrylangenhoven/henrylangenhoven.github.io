@@ -2,9 +2,9 @@ import { TestBed } from '@angular/core/testing';
 
 import { DataService } from './data.service';
 import { About } from '../main/about/about.model';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { of, throwError } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('DataService', () => {
   let service: DataService;
@@ -26,7 +26,7 @@ describe('DataService', () => {
   };
 
   beforeEach(() => {
-    TestBed.configureTestingModule({ imports: [HttpClientTestingModule] });
+    TestBed.configureTestingModule({ imports: [], providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()] });
     service = TestBed.inject(DataService);
 
     httpClient = TestBed.inject(HttpClient);
