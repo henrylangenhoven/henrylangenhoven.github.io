@@ -9,7 +9,10 @@ describe('AboutService', () => {
   const mockedCurrentDate = '2023-08-13';
 
   beforeEach(() => {
-    TestBed.configureTestingModule({ imports: [], providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()] });
+    TestBed.configureTestingModule({
+      imports: [],
+      providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()],
+    });
     service = TestBed.inject(AboutService);
 
     jasmine.clock().install();
