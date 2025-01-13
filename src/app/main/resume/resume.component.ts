@@ -4,5 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-resume',
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss'],
+  standalone: false,
 })
 export class ResumeComponent {}
