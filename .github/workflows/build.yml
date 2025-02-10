@@ -8,7 +8,7 @@ on:
     branches: ['main']
 
 jobs:
-  format-code:
+  check-formatting:
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.head_ref }}
@@ -35,29 +35,15 @@ jobs:
       - name: Continuous Integration
         run: npm ci
 
-      - name: Apply formatting
-        run: npm run format:src
-
-      - name: Check for changes
-        id: check_changes
-        run: |
-          if [[ -n "$(git diff --exit-code)" ]]; then
-            echo "changes=true" >> $GITHUB_OUTPUT
-          else
-            echo "changes=false >> $GITHUB_OUTPUT"
-          fi
-
-      - name: Commit & Push changes
-        if: steps.check_changes.outputs.changes == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v5
-
+      - name: Check formatting
+        run: npm run format:check
   build:
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.head_ref }}
       cancel-in-progress: true
 
-    needs: format-code
+    needs: check-formatting
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
