@@ -21,27 +21,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch full history to count tags
+          fetch-depth: 0 # Ensure all tags are available
 
-      - name: Bump version and update package.json
+      - name: Bump version
         run: |
-          # Calculate new version based on current year, month, and release count.
+          # Get current year and month (non-padded month)
           YEAR=$(date +'%Y')
           MONTH=$(date +%-m)
+          # Count existing tags for this month (e.g. 2025.2.*)
           RELEASE_COUNT=$(git tag --list "${YEAR}.${MONTH}.*" | wc -l | tr -d ' ')
           NEW_RELEASE=$((RELEASE_COUNT + 1))
           NEW_VERSION="${YEAR}.${MONTH}.${NEW_RELEASE}"
           echo "New version: $NEW_VERSION"
-
-          # Update package.json version (this writes the new version into package.json)
-          npm version "$NEW_VERSION" --no-git-tag-version
-
-          # Commit the updated package.json
+          # Update package.json version without auto-tagging
+          npm version $NEW_VERSION --no-git-tag-version
+          # Commit the version bump
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -am "chore: bump version to $NEW_VERSION [skip ci]"
-
-          # Tag the new version and push changes (including tags)
+          # Tag the new version and push the changes
           git tag "$NEW_VERSION"
           git push origin HEAD --follow-tags
 
