@@ -1,6 +1,6 @@
 {
   "name": "portfolio-app",
-  "version": "2025.2.1",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,9 +13,7 @@
     "format:check": "prettier --config ./.prettierrc --list-different .",
     "format:all": "npx prettier --config ./.prettierrc --write . --check",
     "format:src": "npx prettier --config ./.prettierrc --write ./src --check",
-    "prepare": "husky",
-    "bump-version": "node scripts/bump-version.js",
-    "create-release": "npm run bump-version && git push origin HEAD --follow-tags"
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
