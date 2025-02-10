@@ -12,7 +12,8 @@
     "lint": "ng lint",
     "format:check": "prettier --config ./.prettierrc --list-different .",
     "format:all": "npx prettier --config ./.prettierrc --write . --check",
-    "format:src": "npx prettier --config ./.prettierrc --write ./src --check"
+    "format:src": "npx prettier --config ./.prettierrc --write ./src --check",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "eslint": "^9.19.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.3",
     "karma-chrome-launcher": "~3.2.0",
