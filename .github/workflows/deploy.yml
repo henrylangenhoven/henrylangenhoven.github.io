@@ -48,6 +48,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check for version bump in package.json
+        run: |
+          if git diff-tree --no-commit-id --name-only -r HEAD | grep -q "package.json"; then
+          echo "Version bump detected."
+          else
+          echo "No version bump detected. Aborting deploy."
+          exit 1
+          fi
+
       - name: Run tests
         run: npm run test:headless
 
