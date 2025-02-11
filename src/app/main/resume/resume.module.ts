@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ResumeComponent } from './resume.component';
 
 @NgModule({
-  declarations: [ResumeComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, ResumeComponent],
   exports: [ResumeComponent],
 })
 export class ResumeModule {}

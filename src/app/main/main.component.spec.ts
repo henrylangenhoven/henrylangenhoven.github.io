@@ -20,7 +20,10 @@ describe('MainComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        AboutModule,
+        FactsModule,
+        SkillsModule,
         MainComponent,
         MockComponents(
           AboutComponent,
@@ -33,7 +36,6 @@ describe('MainComponent', () => {
           TestimonialsComponent
         ),
       ],
-      imports: [AboutModule, FactsModule, SkillsModule],
     });
     fixture = TestBed.createComponent(MainComponent);
     component = fixture.componentInstance;

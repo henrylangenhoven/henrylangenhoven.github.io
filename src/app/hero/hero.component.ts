@@ -5,7 +5,6 @@ import Typed from 'typed.js'; // TODO: remove `src/assets/vendor/typed.js/typed.
   selector: 'app-hero',
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss'],
-  standalone: false,
 })
 export class HeroComponent implements OnInit {
   // TODO: move name and dataItems to a service

@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FactsComponent } from './facts.component';
 
 @NgModule({
-  declarations: [FactsComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, FactsComponent],
   exports: [FactsComponent],
 })
 export class FactsModule {}

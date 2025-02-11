@@ -9,8 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MainModule } from './main/main.module';
 
 @NgModule({
-  declarations: [AppComponent, HeroComponent, HeaderComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, MainModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, MainModule, HeroComponent, HeaderComponent, FooterComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

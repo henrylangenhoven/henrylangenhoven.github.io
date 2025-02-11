@@ -11,7 +11,6 @@ import { SkillsModule } from './skills/skills.module';
 import { MainComponent } from './main.component';
 
 @NgModule({
-  declarations: [MainComponent],
   imports: [
     CommonModule,
     AboutModule,
@@ -22,6 +21,7 @@ import { MainComponent } from './main.component';
     FactsModule,
     TestimonialsModule,
     SkillsModule,
+    MainComponent,
   ],
   exports: [
     MainComponent,
