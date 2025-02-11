@@ -14,8 +14,7 @@ describe('AboutComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AboutComponent],
-      imports: [],
+      imports: [AboutComponent],
       providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()],
     });
     fixture = TestBed.createComponent(AboutComponent);

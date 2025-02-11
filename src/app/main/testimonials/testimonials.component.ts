@@ -4,6 +4,5 @@ import { Component } from '@angular/core';
   selector: 'app-testimonials',
   templateUrl: './testimonials.component.html',
   styleUrls: ['./testimonials.component.scss'],
-  standalone: false,
 })
 export class TestimonialsComponent {}

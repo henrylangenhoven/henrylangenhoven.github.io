@@ -11,8 +11,11 @@ import { provideRouter } from '@angular/router';
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      imports: [MockModule(MainModule)],
-      declarations: [AppComponent, MockComponents(HeaderComponent, HeroComponent, MainComponent, FooterComponent)],
+      imports: [
+        MockModule(MainModule),
+        MockComponents(HeaderComponent, HeroComponent, MainComponent, FooterComponent),
+        AppComponent,
+      ],
       providers: [provideRouter([])],
     })
   );

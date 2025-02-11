@@ -6,7 +6,6 @@ import { About } from './about.model';
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  standalone: false,
 })
 export class AboutComponent implements OnInit {
   about?: About;
