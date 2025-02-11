@@ -1,9 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainComponent } from './main.component';
-import { AboutModule } from './about/about.module';
-import { FactsModule } from './facts/facts.module';
-import { SkillsModule } from './skills/skills.module';
 import { MockComponents } from 'ng-mocks';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -21,9 +18,6 @@ describe('MainComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        AboutModule,
-        FactsModule,
-        SkillsModule,
         MainComponent,
         MockComponents(
           AboutComponent,
