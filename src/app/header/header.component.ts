@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 export interface HeaderLink {
   name: string;
@@ -11,7 +11,7 @@ export interface HeaderLink {
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [NgFor, NgClass],
+  imports: [NgClass],
 })
 export class HeaderComponent {
   links: HeaderLink[] = [

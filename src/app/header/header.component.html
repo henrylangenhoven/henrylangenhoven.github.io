@@ -15,12 +15,14 @@
 
     <nav id="navbar" class="nav-menu navbar">
       <ul>
-        <li *ngFor="let link of links">
-          <a href="{{ link.url }}" class="nav-link scrollto" [ngClass]="{ active: isRouterLinkActive(link.url) }">
-            <i class="bx" [ngClass]="link.icon"></i>
-            <span>{{ link.name }}</span>
-          </a>
-        </li>
+        @for (link of links; track link) {
+          <li>
+            <a href="{{ link.url }}" class="nav-link scrollto" [ngClass]="{ active: isRouterLinkActive(link.url) }">
+              <i class="bx" [ngClass]="link.icon"></i>
+              <span>{{ link.name }}</span>
+            </a>
+          </li>
+        }
       </ul>
     </nav>
     <!-- .nav-menu -->
