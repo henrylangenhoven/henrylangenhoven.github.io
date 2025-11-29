@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 
 @Component({
   selector: 'app-main',
+  standalone: true,
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
   imports: [
