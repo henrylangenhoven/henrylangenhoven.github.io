@@ -1,0 +1,66 @@
+name: PR Build & Test
+
+on:
+  pull_request:
+    branches: ['main']
+
+permissions:
+  contents: read
+
+env:
+  CI: true
+
+jobs:
+  format:
+    name: Format & Lint
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pr-format-${{ github.head_ref || github.run_id }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Check formatting
+        run: npm run format:check
+  test:
+    name: Test & Build
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pr-build-${{ github.head_ref || github.run_id }}
+      cancel-in-progress: true
+
+    needs: format
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test
+        run: npm run test:headless
+
+      - name: Build
+        run: npm run build --if-present
