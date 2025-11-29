@@ -3,26 +3,58 @@ updates:
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
-      interval: weekly
+      interval: monthly
+      day-of-month: '1'
       time: '12:00'
+    groups:
+      actions:
+        patterns:
+          - '*'
   - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: weekly
+      interval: monthly
+      day-of-month: '1'
       time: '12:00'
     groups:
-      angular-version:
+      angular-core:
         patterns:
-          - '@angular*'
-      npm-dependencies:
-        update-types:
-          - major
-          - minor
-          - patch
+          - '@angular/*'
+          - 'rxjs'
+          - 'zone.js'
         exclude-patterns:
-          - '@angular*'
+          - '@angular/cli'
+          - '@angular/build'
+          - '@angular/compiler-cli'
+          - '@angular-devkit/*'
+      angular-tooling:
+        patterns:
+          - '@angular-devkit/*'
+          - '@angular/cli'
+          - '@angular/build'
+          - '@angular/compiler-cli'
+          - 'typescript'
+      linting-and-formatting:
+        patterns:
+          - 'eslint'
+          - 'eslint-*'
+          - '@typescript-eslint/*'
+          - '@angular-eslint/*'
+          - 'prettier'
+          - 'prettier-*'
+      testing:
+        patterns:
+          - 'jasmine*'
+          - '@types/jasmine'
+          - 'karma*'
+      app-dependencies:
+        patterns:
+          - '@standard-schema/*'
+          - 'typed.js'
+          - 'tslib'
   - package-ecosystem: docker
     directory: '/'
     schedule:
-      interval: weekly
+      interval: monthly
+      day-of-month: '1'
       time: '12:00'
