@@ -9,6 +9,7 @@ export interface HeaderLink {
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   imports: [NgClass],

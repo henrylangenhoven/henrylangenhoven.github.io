@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { DataService } from '../../util/data.service';
 import { About } from './about.model';
 import { Observable } from 'rxjs';
@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AboutService {
-  aboutData: Observable<About> = this.jsonService.getAboutJsonData();
+  private jsonService = inject(DataService);
 
-  constructor(private jsonService: DataService) {}
+  aboutData: Observable<About> = this.jsonService.getAboutJsonData();
 
   getAbout(): Observable<About> {
     return this.aboutData;
