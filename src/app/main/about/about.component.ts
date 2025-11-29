@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AboutService } from './about.service';
 import { About } from './about.model';
 
@@ -9,9 +9,9 @@ import { About } from './about.model';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  about?: About;
+  private aboutService = inject(AboutService);
 
-  constructor(private aboutService: AboutService) {}
+  about?: About;
 
   ngOnInit(): void {
     this.aboutService.getAbout().subscribe(about => {
