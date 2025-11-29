@@ -6,13 +6,14 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 env:
   CI: true
 
 jobs:
   format:
-    name: Format & Lint
+    name: Format
     runs-on: ubuntu-latest
     concurrency:
       group: pr-format-${{ github.head_ref || github.run_id }}
