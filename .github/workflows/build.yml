@@ -9,28 +9,18 @@ permissions:
   actions: read
 
 jobs:
-  html:
-    name: Validate HTML
+  static-site-checks:
+    name: Validate Static Site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Check root HTML exists
-        run: test -f index.html
-
-      - name: Basic HTML sanity check
-        run: grep -q '<title>' index.html
-
-  assets:
-    name: Validate Assets
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-
-      - name: Check required assets
+      - name: Check required site files
         run: |
+          test -f .nojekyll
+          test -f index.html
+          grep -q '<title>' index.html
           test -f assets/css/style.css
           test -f assets/js/main.js
           test -f assets/img/favicon.png
