@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Henry Langenhoven | Senior Software Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Henry Langenhoven, a senior software engineer experienced in backend, frontend, cloud, Kubernetes, and software delivery." />
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light" || savedTheme === "dark") {
+          document.documentElement.dataset.theme = savedTheme;
+        }
+      } catch {
+        // The system preference remains active when storage is unavailable.
+      }
+    </script>
+    <link rel="icon" href="assets/img/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="wordmark" href="#top">Henry Langenhoven</a>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+            <svg class="theme-icon theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M20.5 14.4A8.5 8.5 0 0 1 9.6 3.5a8.5 8.5 0 1 0 10.9 10.9Z"></path>
+            </svg>
+          </button>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Menu
+          </button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero section">
+          <div class="hero-copy">
+            <p class="eyebrow">Senior Software Engineer · Utrecht, The Netherlands</p>
+            <h1>Full-stack software engineering across backend, frontend, and cloud platforms.</h1>
+            <p class="lede">
+              I build and maintain software systems using Java, Kotlin, Spring, Quarkus, Angular, React, Kubernetes,
+              and AWS.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://www.linkedin.com/in/henry-langenhoven/" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+              <a class="button button-secondary" href="https://github.com/henrylangenhoven" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <img
+              src="assets/img/Henry Team Rockstars Profile Pic 2023.jpg"
+              alt="Portrait of Henry Langenhoven"
+              class="portrait" />
+            <div class="hero-facts">
+              <div>
+                <span class="fact-label">Experience</span>
+                <strong><span data-experience-years></span> years</strong>
+              </div>
+              <div>
+                <span class="fact-label">Focus</span>
+                <strong>Backend, frontend, cloud, and platform engineering</strong>
+              </div>
+              <div>
+                <span class="fact-label">Preferred setup</span>
+                <strong>Remote first, hybrid second</strong>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section" id="about">
+          <div class="section-heading">
+            <p class="eyebrow">About</p>
+            <h2>Senior software engineer based in Utrecht.</h2>
+          </div>
+          <div class="about-grid">
+            <div class="panel">
+              <p>
+                I have over <span data-experience-years></span> years of professional software development experience,
+                covering backend services, web applications, cloud infrastructure, and delivery pipelines.
+              </p>
+              <p>
+                I am proficient in Java, Kotlin, Spring, and Quarkus for backend development; Angular and React for
+                frontend development; PostgreSQL and Supabase for data storage and backend services; Kubernetes and
+                AWS for cloud platforms; and GitHub, GitHub Actions, and Argo CD for delivery.
+              </p>
+              <p>
+                I am also interested in the practical use of agentic development tools and open to using them where
+                they are appropriate. For personal projects, I am a homelab and self-hosting enthusiast and run my own
+                Kubernetes cluster.
+              </p>
+            </div>
+            <div class="panel meta-list">
+              <div>
+                <span>Role</span>
+                <strong>Senior Software Engineer & Full Stack Developer</strong>
+              </div>
+              <div>
+                <span>Based in</span>
+                <strong>Utrecht, The Netherlands</strong>
+              </div>
+              <div>
+                <span>Originally from</span>
+                <strong>Pretoria, South Africa</strong>
+              </div>
+              <div>
+                <span>Degree</span>
+                <strong>Bachelor Degree of Computing</strong>
+              </div>
+              <div>
+                <span>Employment</span>
+                <strong>Permanent or freelance</strong>
+              </div>
+              <div>
+                <span>Preferred setup</span>
+                <strong>Remote first, hybrid second</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="capabilities">
+          <div class="section-heading">
+            <p class="eyebrow">Capabilities</p>
+            <h2>Technical experience.</h2>
+          </div>
+          <div class="capability-grid">
+            <article class="panel capability">
+              <h3>Backend development</h3>
+              <p>
+                Java and Kotlin services built with Spring and Quarkus, including microservices, APIs, business logic,
+                PostgreSQL databases, Supabase, and integration with existing systems.
+              </p>
+            </article>
+            <article class="panel capability">
+              <h3>Frontend development</h3>
+              <p>
+                Web application development with Angular and React, working across frontend and backend boundaries
+                where required.
+              </p>
+            </article>
+            <article class="panel capability">
+              <h3>Cloud and platforms</h3>
+              <p>
+                Deployment and operation of containerized applications using Kubernetes and AWS, with Argo CD for
+                GitOps-based delivery.
+              </p>
+            </article>
+            <article class="panel capability">
+              <h3>Delivery and tooling</h3>
+              <p>
+                Source control and CI/CD with GitHub and GitHub Actions, supported by code review and automated
+                testing.
+              </p>
+            </article>
+          </div>
+          <div class="tag-row" aria-label="Core technology keywords">
+            <span>Java</span>
+            <span>Kotlin</span>
+            <span>Spring</span>
+            <span>Quarkus</span>
+            <span>Microservices</span>
+            <span>Angular</span>
+            <span>React</span>
+            <span>PostgreSQL</span>
+            <span>Supabase</span>
+            <span>Kubernetes</span>
+            <span>AWS</span>
+            <span>Argo CD</span>
+            <span>GitHub</span>
+            <span>GitHub Actions</span>
+            <span>IntelliJ IDEA</span>
+          </div>
+        </section>
+
+        <section class="section" id="experience">
+          <div class="section-heading">
+            <p class="eyebrow">Experience</p>
+            <h2>Employment history.</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item panel">
+              <div class="timeline-meta">
+                <span>Aug 2023 - Present</span>
+                <span>'s-Hertogenbosch, Netherlands · Hybrid</span>
+              </div>
+              <h3>Senior Software Engineer · Team Rockstars IT</h3>
+              <p>
+                Software consulting and delivery across full-stack development, system modernization, cloud
+                platforms, and team-level technical responsibilities.
+              </p>
+            </article>
+            <article class="timeline-item panel">
+              <div class="timeline-meta">
+                <span>Mar 2021 - Jul 2023</span>
+                <span>Utrecht, Netherlands · Hybrid</span>
+              </div>
+              <h3>Senior Software Engineer · Capgemini</h3>
+              <p>
+                Worked on government system modernization at UWV, with software development, technical leadership,
+                and delivery coordination responsibilities.
+              </p>
+            </article>
+            <article class="timeline-item panel">
+              <div class="timeline-meta">
+                <span>Feb 2017 - Feb 2021</span>
+                <span>Gauteng, South Africa · Hybrid</span>
+              </div>
+              <h3>Software Engineer · Entelect</h3>
+              <p>
+                Delivered full-stack systems for consulting clients and took on technical leadership and knowledge
+                sharing responsibilities.
+              </p>
+            </article>
+            <article class="timeline-item panel">
+              <div class="timeline-meta">
+                <span>Jan 2015 - Jan 2017</span>
+                <span>Gauteng, South Africa · On-site</span>
+              </div>
+              <h3>Java Developer · Online Intelligence</h3>
+              <p>
+                Built and supported a risk management platform using Java, JavaScript, HTML, CSS, and SQL Server while
+                completing a computing degree.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2>Contact and profiles.</h2>
+          </div>
+          <div class="contact-grid">
+            <div class="panel">
+              <p>
+                LinkedIn has my current professional history and is the best way to contact me about a role.
+              </p>
+              <div class="contact-links">
+                <a href="https://www.linkedin.com/in/henry-langenhoven/" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="https://github.com/henrylangenhoven" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://stackoverflow.com/users/4059567/henry-langenhoven" target="_blank" rel="noreferrer">
+                  Stack Overflow
+                </a>
+              </div>
+            </div>
+            <div class="panel location-card">
+              <div>
+                <span>Current location</span>
+                <strong>Utrecht, The Netherlands</strong>
+              </div>
+              <div>
+                <span>Origin</span>
+                <strong>Pretoria, South Africa</strong>
+              </div>
+              <div>
+                <span>Availability</span>
+                <strong>Permanent and freelance software engineering roles</strong>
+              </div>
+              <div>
+                <span>Work setup</span>
+                <strong>Remote preferred; hybrid considered</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; <span data-current-year></span> Henry Langenhoven</p>
+        <a href="#top">Back to top</a>
+      </footer>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
