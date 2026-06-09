@@ -1,24 +1,15 @@
 # Henry Langenhoven
 
-Static portfolio site for GitHub Pages.
+Senior Software Engineer based in Utrecht, the Netherlands.
 
-## Local preview
+This repository contains the source for my personal portfolio:
 
-Run:
+[henrylangenhoven.github.io](https://henrylangenhoven.github.io/)
 
-```bash
-python3 -m http.server 4173
-```
+You can also find me on [LinkedIn](https://www.linkedin.com/in/henry-langenhoven/) and
+[Stack Overflow](https://stackoverflow.com/users/4059567/henry-langenhoven).
 
-Then open `http://localhost:4173`.
+## About this site
 
-## Structure
-
-- `index.html` contains the site markup.
-- `assets/css/style.css` contains the custom theme.
-- `assets/js/main.js` contains the small amount of progressive enhancement.
-- `assets/img/` contains the images used by the site.
-
-## Deployment
-
-GitHub Pages deploys the repository root directly via `.github/workflows/deploy.yml`.
+The site is built with plain HTML, CSS, and JavaScript. It has no framework, package dependencies, or build step.
+GitHub Actions deploys it to GitHub Pages from the `main` branch.
