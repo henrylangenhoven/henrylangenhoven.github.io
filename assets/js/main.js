@@ -1,7 +1,7 @@
-const startDate = new Date("2015-01-12T00:00:00");
+const now = new Date();
+const experienceStartDate = new Date(2015, 0, 12);
 
 function fullYearsSince(date) {
-  const now = new Date();
   let years = now.getFullYear() - date.getFullYear();
   const hasNotReachedAnniversary =
     now.getMonth() < date.getMonth() ||
@@ -14,12 +14,14 @@ function fullYearsSince(date) {
   return years;
 }
 
-document.querySelectorAll("[data-current-year]").forEach((element) => {
-  element.textContent = String(new Date().getFullYear());
-});
+const currentYear = document.querySelector("[data-current-year]");
+
+if (currentYear) {
+  currentYear.textContent = now.getFullYear();
+}
 
 document.querySelectorAll("[data-experience-years]").forEach((element) => {
-  element.textContent = `${fullYearsSince(startDate)}+`;
+  element.textContent = `${fullYearsSince(experienceStartDate)}+`;
 });
 
 const header = document.querySelector(".site-header");
