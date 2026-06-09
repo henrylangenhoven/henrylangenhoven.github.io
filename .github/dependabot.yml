@@ -1,11 +1,15 @@
 version: 2
 updates:
-  - package-ecosystem: github-actions
-    directory: '/'
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
-      interval: monthly
-      time: '12:00'
+      interval: "monthly"
+      time: "12:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 1
+    commit-message:
+      prefix: "chore(deps)"
     groups:
-      actions:
+      github-actions:
         patterns:
-          - '*'
+          - "*"
